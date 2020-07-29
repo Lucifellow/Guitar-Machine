@@ -1,0 +1,206 @@
+
+//style buttons
+.drum-pad{
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    border-radius: 50%;
+    background:url("wood.jpg");
+    color:white;
+    font-weight: bold;
+}
+
+//button on-hover effect
+.drum-pad:hover{
+    color:white;
+}
+
+//button-click effect
+.drum-pad:active{
+    transform: translateY(5px);
+    color:white;
+}
+
+//set height and width
+@mixin setWidthHeight($width,$height) {
+    width:$width;
+    height:$height;
+}
+
+@mixin setMarginLeftTop($left,$top){
+    margin-left:$left;
+    margin-top:$top;
+
+}
+
+@mixin setPaddingLeftTop($left,$top){
+    padding-left:$left;
+    padding-top:$top;
+}
+
+//background responsive
+body{
+    background-image:url("https://i.imgur.com/TZBSneR.jpg");
+    background-repeat:no-repeat; 
+    background-position:center center;
+    background-attachment:fixed; 
+    background-size:cover;
+    height:100%;
+    overflow:hidden;
+}
+//outer container
+#drum-machine{
+    background-color:rgb(0,0,0,0.75);
+    backdrop-filter: blur(5px);
+    @include setWidthHeight(23vw,28vw);
+    border-radius:15%;
+}
+//main container
+#main{
+    margin-top: 15vh;
+}
+//top row of buttons
+#top-row{
+    @include setPaddingLeftTop(2vw,4vw);
+}
+//middle row of buttons
+#middle-row{
+    @include setPaddingLeftTop(2vw,3vw);
+}
+//bottom row of buttons
+#third-row{
+    @include setPaddingLeftTop(2vw,3vw);
+}
+//container for displaying notes played
+#displayContainer{
+    @include setMarginLeftTop(7vw,2vw);
+    @include setWidthHeight(6vw,3vw);
+    background-color:whitesmoke;
+}
+//text displaying notes played
+#display{
+    text-align:center;
+    padding-top:0.5vw;
+    font-weight:bold;
+}
+//4k res settings
+@media (min-width:2400px){
+    #top-row{
+        padding-left:3vw;
+    }
+    #middle-row{
+        padding-left:3vw;
+    }
+    #third-row{
+        padding-left:3vw;
+    }
+
+    #displayContainer{
+        @include setMarginLeftTop(7.5vw,3vw);
+    }  
+    #display{
+        padding-top:0.7vw;
+        font-size: x-large;
+    }  
+}
+//low res laptops
+@media (min-width:1100px)and(max-width:1300px){
+    #top-row{
+        padding-left:1vw;
+    }
+    #middle-row{
+        padding-left:1vw;
+    }
+    #third-row{
+        padding-left:1vw;
+    }
+    #displayContainer{
+        @include setMarginLeftTop(6vw,3vw);
+    } 
+}
+//tablets
+@media (min-width:789px)and(max-width:1099px){
+    #drum-machine{
+        @include setWidthHeight(35vw,35vw);
+    }
+    #top-row{
+        padding-left:3.5vw;
+    }
+    #middle-row{
+        padding-left:3.5vw;
+    }
+    #third-row{
+        padding-left:3.5vw;
+    }
+    #displayContainer{
+        @include setMarginLeftTop(10vw,5vw);
+        @include setWidthHeight(10vw,4vw);
+    } 
+    #display{
+        padding:1vw;
+    }
+}
+//high resolution phones
+@media (min-width:605px) and (max-width:788px){
+    #drum-machine{
+        @include setWidthHeight(50vw,47vw);
+    }
+    #top-row{
+        @include setPaddingLeftTop(5vw,7vw);
+    }
+    #middle-row{
+        padding-left:5vw;
+    }
+    #third-row{
+        padding-left:5vw;
+    }
+    #displayContainer{
+        @include setMarginLeftTop(15vw,8vw);
+        @include setWidthHeight(12vw,5vw);
+    } 
+}
+//mid resolution phones
+@media (min-width:340px)and(max-width:604px){
+    #drum-machine{
+        @include setWidthHeight(85vw,70vw);
+    }
+    #top-row{
+        @include setPaddingLeftTop(11vw,10vw);
+    }
+    #middle-row{
+        @include setPaddingLeftTop(11vw,7vw);
+    }
+    #third-row{
+        @include setPaddingLeftTop(11vw,7vw);
+    }
+    #displayContainer{
+        @include setMarginLeftTop(25vw,8vw);
+        @include setWidthHeight(25vw,8vw);
+    } 
+    #display{
+        padding:1vw;
+    }
+}
+//low resolution phones
+@media (max-width:339px){
+    #drum-machine{
+        @include setWidthHeight(95vw,150vw);
+    }
+    #top-row{
+        @include setPaddingLeftTop(7vw,35vw);
+    }
+    #middle-row{
+        @include setPaddingLeftTop(7vw,15vw);
+    }
+    #third-row{
+        @include setPaddingLeftTop(7vw,15vw);
+    }
+    #displayContainer{
+        @include setMarginLeftTop(20vw,15vw);
+        @include setWidthHeight(35vw,10vw);
+    } 
+    #display{
+        padding:1vw;
+    }
+}
